@@ -55,7 +55,10 @@ async function run() {
   } else {
     core.info("comment : disabled");
   }
-  const pull = await octokit.pulls.get(context.issue.number)
+  const pull = await octokit.pulls.get({
+    ...context.repo,
+    pull_number: context.payload.pull_request.number
+  })
   core.info(pull)
   core.info(`ref : ${context.payload.pull_request.html_url}`)
 }
