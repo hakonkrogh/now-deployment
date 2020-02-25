@@ -55,6 +55,7 @@ async function run() {
   } else {
     core.info("comment : disabled");
   }
+  core.info(`ref : ${context.payload.pull_request.html_url}`)
 }
 
 async function setEnv() {
