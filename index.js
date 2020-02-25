@@ -117,6 +117,8 @@ async function nowDeploy() {
         `githubCommitRepo=${context.repo.repo}`,
         "-m",
         `githubCommitMessage=${commit}`,
+        "-m",
+        `githubCommitRef=${context.ref}`
       ],
       options
     )
